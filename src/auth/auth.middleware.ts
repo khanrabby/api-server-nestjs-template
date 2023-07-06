@@ -2,7 +2,7 @@ import { Injectable, Logger, NestMiddleware, UnauthorizedException } from "@nest
 import { decode, JwtPayload, verify } from "jsonwebtoken";
 import jwkToPem from "jwk-to-pem";
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const jwk: { keys: PublicKey[] } = require(`../../${process.env.JKS_FILE}`);
+const jwk: { keys: PublicKey[] } = require(`../../${process.env.JKS_FILE}.json`);
 
 interface CognitoToken extends JwtPayload {
   sub: string;
