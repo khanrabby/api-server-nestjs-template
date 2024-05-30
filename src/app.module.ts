@@ -54,6 +54,7 @@ const commonDbConfigs: TypeOrmModuleOptions = {
       password: process.env.DB_PASS,
       database: process.env.DB_NAME,
       synchronize: true,
+      autoLoadEntities: true,
       entities: [join(__dirname, "**", "*.entity.{ts,js}")],
     }),
     TagModule,

@@ -33,6 +33,7 @@ async function bootstrap() {
 
   // cors
   let corsConfig: FastifyCorsOptions | undefined = undefined;
+  console.log("IS_PROD = ", IS_PROD);
   if (IS_PROD) {
     corsConfig = {
       optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
@@ -40,11 +41,11 @@ async function bootstrap() {
         origin: string,
         callback: (error: any, isValid: boolean) => void
       ) {
-        if (
-          !origin ||
+        if (!origin ||
           (origin.startsWith("https://") &&
-            (origin.endsWith("textalyz.com") || origin === "*")) ||
-          origin === "http://localhost:3000"
+            (origin.endsWith("vendidit.com") || origin === "*")) ||
+          origin === "http://localhost:3000" ||
+          origin === "http://localhost:4002"
         ) {
           callback(null, true);
         } else {
@@ -83,7 +84,7 @@ async function bootstrap() {
   );
 
   // needs to happen last - https://github.com/nestjs/swagger/issues/197
-  if (!IS_PROD) {
+  if (IS_PROD) {
     // configure swagger
     const packageDataRaw = fs.readFileSync("./package.json");
     const packageData = JSON.parse(packageDataRaw.toString());
