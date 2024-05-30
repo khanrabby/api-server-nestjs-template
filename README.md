@@ -25,6 +25,7 @@ Your project will be started http://localhost:4002/
 yarn start:prod or npm start:prod for production environment
 
 ### Example .env.development to run the project 
+NODE_ENV <br/>
 PORT <br/>
 DB_HOST <br/>
 DB_PORT <br/>
@@ -32,11 +33,4 @@ DB_USER <br/>
 DB_PASS <br/>
 DB_NAME <br/>
 JKS_FILE <br/>
-FIREBASE_SERVICE_ACCOUNT <br/>
-GOOGLE_APPLICATION_CREDENTIALS <br/>
-RTDB <br/>
-POSTMARK_SERVER_TOKEN <br/>
-BASE_URL <br/>
-FROM_EMAIL <br/>
-ZOOM_TOKEN <br/>
-PROJECT_ID <br/>
+AWS_REGION <br/>
