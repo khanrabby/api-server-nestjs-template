@@ -18,6 +18,7 @@ import { IS_PROD } from "./util/config";
 import { AppModule } from "./app.module";
 
 import { TagModule } from "./tag/tag.module";
+import { HealthModule } from "./health/health.module";
 
 async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(
@@ -109,6 +110,7 @@ async function bootstrap() {
         operationIdFactory,
         include: [
           TagModule,
+          HealthModule
         ],
       }
     );

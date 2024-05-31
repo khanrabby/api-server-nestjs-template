@@ -16,6 +16,7 @@ import { IS_PROD } from "./util/config";
 
 import { IncomingMessage } from "http";
 import { TagModule } from "./tag/tag.module";
+import { HealthModule } from "./health/health.module";
 
 const REQUEST_ID_HEADER = "x-request-id";
 
@@ -58,6 +59,7 @@ const commonDbConfigs: TypeOrmModuleOptions = {
       entities: [join(__dirname, "**", "*.entity.{ts,js}")],
     }),
     TagModule,
+    HealthModule
   ],
   controllers: [],
   providers: [

@@ -1,16 +1,19 @@
 FROM --platform=linux/amd64 node:16.16
 # FROM node:16.16
 
-ENV NODE_ENV=development
+# ENV NODE_ENV=dev
+# ENV JKS_FILE=jwks-dev
 
 WORKDIR /usr/src/app
 
 COPY package*.json ./
+COPY yarn.lock ./
+# COPY .env.development ./
 
-RUN npm install
+RUN yarn install
 
 COPY . ./
 
-EXPOSE 80
+EXPOSE 4002
 
-CMD ["npm", "run", "start"]
+CMD ["yarn", "start", ":dev"]
