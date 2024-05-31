@@ -34,3 +34,5 @@ DB_PASS <br/>
 DB_NAME <br/>
 JKS_FILE <br/>
 AWS_REGION <br/>
+
+integrating new ci/cd pipeline with aws ecs
